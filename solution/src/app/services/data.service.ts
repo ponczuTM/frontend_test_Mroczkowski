@@ -26,30 +26,33 @@ export class DataService {
   }
 
   getRandomContent(): string {
-    const randomIndex = Math.floor(Math.random() * this.contentData.length);
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * this.contentData.length);
+    } while (randomIndex == 0 || randomIndex == 1);
     return this.contentData[randomIndex]?.content || '';
   }
 
   getUniqueRandomContent(existingContent: string[]): string | null {
     const availableContent = this.contentData.map(item => item.content).filter(content => !existingContent.includes(content));
-  
+
     if (availableContent.length >= 2) {
       availableContent.splice(0, 2);
     }
-  
+
     if (availableContent.length === 0) {
       return null;
     }
-  
+
     const randomIndex = Math.floor(Math.random() * availableContent.length);
     console.log(randomIndex);
     return availableContent[randomIndex];
   }
-  
-  
+
+
 
   getFileContent(): string {
     return this.fileContent;
   }
-  
+
 }

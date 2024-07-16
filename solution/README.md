@@ -7,8 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Jak uruchomić?
 
-```npm install```  
-```ng serve```
+```npm install --force```  
+```ng serve```  
+### lub  
+```npm install --force```  
+```npm run start```
 
 ## Co NIE zostało wykonane:
 - do wysunięcia ramki użyto js (ts)
