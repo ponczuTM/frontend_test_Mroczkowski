@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "content": "Treść 1 dla bloku trzeciego",
+      "tag": "h2"
+    },
+    {
+      "id": 2,
+      "content": "Treść 2 dla bloku trzeciego",
+      "tag": "p"
+    },
+    {
+      "id": 3,
+      "content": "Treść 3 dla bloku trzeciego",
+      "tag": "div"
+    },
+    {
+      "id": 4,
+      "content": "Treść 4 dla bloku trzeciego",
+      "tag": "h4"
+    },
+    {
+      "id": 5,
+      "content": "Treść 5 dla bloku trzeciego",
+      "tag": "article"
+    },
+    {
+      "id": 6,
+      "content": "Treść 6 dla bloku trzeciego",
+      "tag": "section"
+    }
+  ]

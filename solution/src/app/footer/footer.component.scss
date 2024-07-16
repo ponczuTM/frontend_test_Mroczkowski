@@ -1,0 +1,149 @@
+.footer {
+    z-index: 1;
+    border-top: 1px solid black;
+    width: 100%;
+    background-color: var(--footer-color);
+    color: var(--white-color);
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+
+    .left,
+    .company,
+    .right {
+        display: flex;
+        align-items: center;
+    }
+
+    .left {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .company {
+        visibility: hidden;
+        display: none;
+        cursor: default;
+        flex: 1;
+        justify-content: center;
+        color: var(--gray-color);
+
+        hr {
+            height: 1px;
+            width: 3rem;
+            margin: 0.2rem;
+            border: none;
+            background-color: var(--gray-color);
+        }
+    }
+
+    .right {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    #show {
+        padding: 0.5rem 1rem;
+        margin-right: 3rem;
+        background-color: transparent;
+        color: var(--white-color);
+        border: 1px solid var(--gray-color);
+        cursor: pointer;
+        width: 10rem;
+        border-radius: 0.1rem;
+
+        #arrow-svg {
+            transition: transform 0.2s ease;
+        }
+
+        &.rotated #arrow-svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    .footer-content {
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: -100%;
+        right: 2rem;
+        background-color: var(--white-color);
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 5px;
+        box-shadow: -2px -5px 10px #00000060;
+        transition: bottom 0.3s ease;
+
+        &.visible {
+            bottom: 4rem;
+        }
+
+        button {
+            background-color: var(--white-color);
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        button:hover {
+            color: var(--orange-color);
+        }
+    }
+
+    .css-awesome {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+        width: 4rem;
+        height: 3.5rem;
+        margin-left: 1rem;
+        border: 1px solid var(--gray-color);
+        background-color: transparent;
+        cursor: default;
+        position: relative;
+        transition: border-color 0s 0.8s;
+
+        p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--gray-color);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: inherit;
+            transition: transform 1s, border-color 1s;
+            z-index: -1;
+        }
+
+        &:hover {
+            border-color: transparent;
+            transition: border-color ease-in 0.2s;
+        }
+
+        &:hover::before {
+            transform: rotate(360deg);
+            border-color: var(--orange-color);
+        }
+    }
+
+    @media (min-width: 960px) {
+        .company {
+            visibility: visible;
+            display: flex;
+        }
+    }
+}

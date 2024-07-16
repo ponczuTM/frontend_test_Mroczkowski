@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--navbar-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    h1 {
+        flex-grow: 1;
+        text-align: right;
+        padding-right: 4rem;
+        text-decoration: none;
+        font-size: medium;
+    }
+
+    .logo {
+        margin-right: 1rem;
+        position: relative;
+        display: inline-block;
+
+        img {
+            width: 3rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+        }
+    }
+
+    .hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+    }
+
+    .logo:hover .hover {
+        opacity: 1;
+    }
+}

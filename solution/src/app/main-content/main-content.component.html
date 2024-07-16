@@ -1,0 +1,31 @@
+<h1 class="info">Nagłówek H1
+    <hr class="white-line">
+</h1>
+<main class="main-content">
+    <section class="block-first">
+        <h1 class="header-center">BLOK PIERWSZY</h1>
+        <p><input type="radio" id="option1" name="option" value="option1"><label for="option1">option pierwsza</label>
+        </p>
+        <p><input type="radio" id="option2" name="option" value="option2"><label for="option2">option druga</label></p>
+        <p><input type="radio" id="option3" name="option" value="option3"><label for="option3">option losowa</label></p>
+    </section>
+    <section class="block-second">
+        <h1 class="subheader">BLOK DRUGI</h1>
+        <div class="buttons-container">
+            <button (click)="addContent(true)">Zastąp</button>
+            <button (click)="addContent(false)">Doklej</button>
+        </div>
+    </section>
+    <section class="block-third">
+        <h1 class="cut-block">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE...</h1>
+        <div id="content">
+            <p *ngFor="let item of contentItems">
+                {{item}}
+                <button *ngIf="item !== 'Lorem ipsum' && item !== longText" class="edit-button"
+                    (click)="editContent(item)">Edytuj</button>
+                <button *ngIf="item !== 'Lorem ipsum' && item !== longText" class="delete-button"
+                    (click)="deleteContent(item)">Usuń</button>
+            </p>
+        </div>
+    </section>
+</main>
